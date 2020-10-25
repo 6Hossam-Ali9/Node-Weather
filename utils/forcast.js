@@ -10,7 +10,7 @@ const forcast = (city, callback) =>{
             callback(body.message, undefined)
         }
         else{
-            callback(undefined, "It is currently "+ (body.main.temp-273.15).toFixed(2)+" degrees out. The wind speed is "+ body.wind.speed +" m/s.")
+            callback(undefined, body.weather[0].description + ". It is currently "+ (body.main.temp-273.15).toFixed(2)+" degrees out. The wind speed is "+ body.wind.speed +" m/s.")
         }
     })
 }
